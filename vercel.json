@@ -1,14 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["server/wallet-purchases.json"]
-      }
+  "functions": {
+    "dist/index.js": {
+      "maxDuration": 30,
+      "includeFiles": ["server/wallet-purchases.json"]
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
@@ -20,10 +17,5 @@
     }
   ],
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/public",
-  "functions": {
-    "dist/index.js": {
-      "maxDuration": 30
-    }
-  }
+  "outputDirectory": "dist/public"
 }
