@@ -3,7 +3,7 @@
   "functions": {
     "dist/index.js": {
       "maxDuration": 30,
-      "includeFiles": ["server/wallet-purchases.json"]
+      "includeFiles": "server/wallet-purchases.json"
     }
   },
   "routes": [
