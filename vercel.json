@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "functions": {
-    "dist/index.js": {
-      "maxDuration": 30,
-      "includeFiles": "server/wallet-purchases.json"
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["server/wallet-purchases.json"]
+      }
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
